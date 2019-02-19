@@ -1,6 +1,7 @@
 open Ctypes
 
 type t
+
 val t_typ : t typ
 
 (*Not implemented ges_track_element_add_children_props type C Array type for Types.Array tag not implemented*)
@@ -10,26 +11,25 @@ val t_typ : t typ
  *   t -> Hash_table.t.t structure (\* string *\) ptr *)
 (* val get_control_binding :
  *   t -> string -> Control_binding.t ptr option *)
-val get_element :
-  t ptr -> Element.t ptr
-val get_gnlobject :
-  t ptr -> Element.t ptr
-val get_nleobject :
-  t ptr -> Element.t ptr
+val get_element : t ptr -> Element.t ptr
+
+val get_gnlobject : t ptr -> Element.t ptr
+
+val get_nleobject : t ptr -> Element.t ptr
+
 (* val get_track :
  *   t -> Track.t ptr option *)
-val get_track_type :
-  t ptr -> Track_type.t_list
-val is_active :
-  t ptr -> bool
+val get_track_type : t ptr -> Track_type.t_list
+
+val is_active : t ptr -> bool
+
 (*Not implemented ges_track_element_list_children_properties return type C Array type for Types.Array tag not handled*)
 (* val lookup_child :
  *   t -> string -> (bool * Element.t ptr * Param_spec.t ptr) *)
 (* val remove_control_binding :
  *   t -> string -> bool *)
-val set_active :
-  t ptr -> bool -> bool
-(* val set_control_source :
- *   t -> Control_source.t ptr -> string -> string -> bool *)
-val set_track_type :
-  t ptr -> Track_type.t_list -> unit
+val set_active : t ptr -> bool -> bool
+
+val set_control_source : t -> Control_source.t ptr -> string -> string -> bool
+
+val set_track_type : t ptr -> Track_type.t_list -> unit
