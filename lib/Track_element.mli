@@ -30,6 +30,7 @@ val is_active : t ptr -> bool
  *   t -> string -> bool *)
 val set_active : t ptr -> bool -> bool
 
-val set_control_source : t -> Control_source.t ptr -> string -> string -> bool
+val set_control_source :
+  t ptr -> Control_source.t ptr -> string -> string -> bool
 
 val set_track_type : t ptr -> Track_type.t_list -> unit
