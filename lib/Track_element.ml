@@ -51,7 +51,7 @@ let set_active =
 
 let set_control_source =
   foreign "ges_track_element_set_control_source"
-    ( t_typ @-> ptr Control_source.t_typ @-> string @-> string
+    ( ptr t_typ @-> ptr Control_source.t_typ @-> string @-> string
     @-> returning bool )
 
 let set_track_type =
