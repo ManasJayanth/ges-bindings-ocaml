@@ -15,6 +15,7 @@ depends: [
   "ctypes-foreign"
   "ounit"
   "base"
+  "gobject-introspection"
   "stdio"
   "configurator"
 ]
