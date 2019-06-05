@@ -20,5 +20,7 @@ depends: [
   "gi-bindings-generator"
   "stdio"
   "configurator"
+  "gi-gstreamer"
+  "gi-gst-controller"
 ]
 
