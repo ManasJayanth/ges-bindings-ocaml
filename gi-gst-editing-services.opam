@@ -15,7 +15,9 @@ depends: [
   "ctypes-foreign"
   "ounit"
   "base"
-  "gobject-introspection"
+  "gobject-introspection",
+  "gi-glib2"
+  "gi-bindings-generator"
   "stdio"
   "configurator"
 ]
