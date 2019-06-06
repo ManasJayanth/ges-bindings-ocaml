@@ -49,8 +49,8 @@ val remove_layer :
   t ptr -> Layer.t ptr -> bool
 val remove_track :
   t ptr -> Track.t ptr -> bool
-val save_to_uri :
-  t ptr -> string -> Asset.t ptr option -> bool -> (bool, Error.t structure ptr option) result
+(* val save_to_uri :
+  t ptr -> string -> Asset.t ptr option -> bool -> (bool, Error.t structure ptr option) result *)
 val set_auto_transition :
   t ptr -> bool -> unit
 val set_snapping_distance :
