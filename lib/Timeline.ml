@@ -68,7 +68,7 @@ let remove_layer =
   foreign "ges_timeline_remove_layer" (ptr t_typ @-> ptr Layer.t_typ @-> returning (bool))
 let remove_track =
   foreign "ges_timeline_remove_track" (ptr t_typ @-> ptr Track.t_typ @-> returning (bool))
-let save_to_uri self uri formatter_asset overwrite =
+(* let save_to_uri self uri formatter_asset overwrite =
   let save_to_uri_raw =
     foreign "ges_timeline_save_to_uri" (ptr t_typ @-> string @-> ptr_opt Asset.t_typ @-> bool @-> ptr (ptr_opt Error.t_typ) @-> returning (bool))
   in
@@ -78,7 +78,7 @@ let save_to_uri self uri formatter_asset overwrite =
   | None -> Ok ret
   | Some _ -> let err_ptr = !@ err_ptr_ptr in
     let _ = Gc.finalise (function | Some e -> Error.free e | None -> () ) err_ptr in
-    Error (err_ptr)
+    Error (err_ptr) *)
 let set_auto_transition =
   foreign "ges_timeline_set_auto_transition" (ptr t_typ @-> bool @-> returning (void))
 let set_snapping_distance =
