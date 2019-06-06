@@ -8,7 +8,7 @@ let create =
   foreign "ges_timeline_new" (void @-> returning (ptr t_typ))
 let create_audio_video =
   foreign "ges_timeline_new_audio_video" (void @-> returning (ptr t_typ))
-let create_from_uri uri =
+(* let create_from_uri uri =
   let create_from_uri_raw =
     foreign "ges_timeline_new_from_uri" (string @-> ptr (ptr_opt Error.t_typ) @-> returning (ptr_opt t_typ))
   in
@@ -18,7 +18,7 @@ let create_from_uri uri =
   | None -> Ok ret
   | Some _ -> let err_ptr = !@ err_ptr_ptr in
     let _ = Gc.finalise (function | Some e -> Error.free e | None -> () ) err_ptr in
-    Error (err_ptr)
+    Error (err_ptr) *)
 let add_layer =
   foreign "ges_timeline_add_layer" (ptr t_typ @-> ptr Layer.t_typ @-> returning (bool))
 let add_track =
@@ -51,7 +51,7 @@ let get_track_for_pad =
  *   foreign "ges_timeline_get_tracks" (ptr t_typ @-> returning (ptr List.t_typ)) *)
 let is_empty =
   foreign "ges_timeline_is_empty" (ptr t_typ @-> returning (bool))
-let load_from_uri self uri =
+(* let load_from_uri self uri =
   let load_from_uri_raw =
     foreign "ges_timeline_load_from_uri" (ptr t_typ @-> string @-> ptr (ptr_opt Error.t_typ) @-> returning (bool))
   in
@@ -61,7 +61,7 @@ let load_from_uri self uri =
   | None -> Ok ret
   | Some _ -> let err_ptr = !@ err_ptr_ptr in
     let _ = Gc.finalise (function | Some e -> Error.free e | None -> () ) err_ptr in
-    Error (err_ptr)
+    Error (err_ptr) *)
 let paste_element =
   foreign "ges_timeline_paste_element" (ptr t_typ @-> ptr Timeline_element.t_typ @-> uint64_t @-> int32_t @-> returning (ptr Timeline_element.t_typ))
 let remove_layer =
